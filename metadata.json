@@ -1,0 +1,6 @@
+{
+  "name": "Train Today — Onboarding Command Center",
+  "description": "Employee onboarding workflow automation hub and live employee directory synced with n8n subagents, Personio, and Notion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
