@@ -12,7 +12,7 @@ interface NavbarProps {
   syncStatus: 'idle' | 'syncing' | 'synced';
   onSync: () => void;
   onOpenNewEmployee: () => void;
-  onResetDemoData: () => void;
+  onResetDemoData?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -143,11 +143,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setProfileOpen((prev) => !prev)}
               aria-label="HR Manager Profile"
               className="w-8 h-8 rounded-full bg-slate-900 text-amber-300 font-bold text-xs flex items-center justify-center border-2 border-white shadow-sm ring-1 ring-slate-200 hover:ring-slate-400 transition-all cursor-pointer"
-            >
-              ER
+             disabled={!onResetDemoData} >
+              {onResetDemoData ? "ER" : "HR"}
             </button>
 
-            {profileOpen && (
+            {profileOpen && onResetDemoData && (
               <>
                 <div
                   className="fixed inset-0 z-40"
